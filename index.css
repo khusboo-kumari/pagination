@@ -1,0 +1,273 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.content{
+    height: auto;
+    min-height: 80dvh;
+    max-height: 80dvh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* .card{
+   
+    border-radius: 14px;
+    font-weight: 600;
+    aspect-ratio: 1/1;
+    font-size: x-large;
+    border: 5px #eaeaea solid;
+    background-color: #ffffff;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    width: 264px;
+
+} */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 200px;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} 
+.card img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 160px;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+.card h2{
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/*  Added pagination styles in extra  */
+.pagination.container {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  min-height: 20dvh;
+  gap: 10px;
+}
+
+.page-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  /* margin: auto; */
+  min-height: 20dvh;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  gap: 10px;
+}
+
+.container,
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.btn {
+  border-radius: 14px;
+  padding: 30px;
+  font-weight: 600;
+  /* margin: 10px; */
+  aspect-ratio: 1/1;
+  font-size: x-large;
+  border: 5px #eaeaea solid;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+
+.btn, .truncated {
+  width: 80px; /* Matches .btn initial size */
+  height: 80px; /* Matches .btn initial size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 5px solid #eaeaea;
+  background-color: #ffffff;
+}
+
+
+.truncated{
+  /* Visibility Collapse  */
+  border: none;
+  background-color: transparent;
+  position: relative;
+  cursor: default;
+  pointer-events: none;
+  
+  text-align: center;
+}
+
+.truncated::after{
+  box-sizing: border-box;
+  content: "...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px; 
+  font-size: large;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  border:  3px solid #eaeaea; 
+  background-color: #ffffff;
+  
+}
+
+/* .truncated::after {
+  content: "...";
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  border-radius: inherit;
+  border: 5px solid #eaeaea;
+  background-color: #ffffff;
+} */
+
+.active {
+  background-color: #3f96fd;
+  border: 5px solid #3f96fd;
+  color: #ffffff;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .btn {
+    padding: 16px;
+    font-size: medium;
+    border-width: 3px;
+  }
+
+  .pagination.container {
+    gap: 8px;
+  }
+
+  .card {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 12px;
+    font-size: small;
+    border-width: 2px;
+  }
+
+  .pagination.container {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .page-container {
+    gap: 6px;
+  }
+
+  .card {
+    width: 150px;
+    font-size: medium;
+    padding: 16px;
+  }
+}
+
+
+#prev, #next{
+  background-color: rgb(169, 164, 164);
+}
+
+ /* Responsive Styles */
+@media (max-width: 768px) {
+  .btn,
+  .truncated {
+    /* padding: 16px; */
+    width: 60px; /* Adjusts size on smaller screens */
+    height: 60px;
+    font-size: medium;
+    border-width: 3px;
+   max-width: 50px;
+
+  }
+
+  .truncated::after {
+    font-size: medium;
+    border-width: 3px;
+  max-width: 50px;
+
+  }
+} 
+
+@media (max-width: 480px) {
+  .btn,
+  .truncated {
+    width: 50px;
+    height: 50px;
+    /* padding: 12px; */
+    font-size: small;
+    border-width: 2px;
+  max-width: 50px;
+
+  }
+
+  .truncated::after {
+    font-size: small;
+    border-width: 2px;
+  max-width: 50px;
+
+  }
+}
+
+
+
